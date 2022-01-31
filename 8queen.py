@@ -1,19 +1,6 @@
 import numpy as np
 from random import * 
 
-#8x8 checkerboard grid.
-DIM = 8
-
-#8 queens, array of points for position of each queen
-ideal_board = [[1, 2],
-         [2, 4],
-         [3, 6],
-         [4, 8],
-         [5, 3],
-         [6, 1],
-         [7, 7],
-         [8, 5]]
-
 #Place 8 queens so that none of them can threaten each other.
 #no two queens can have the same x or y value, therby no linear threat.
 #check there is no diagonal threat, such that abs(x_1 - x_2) = abs(y_1 - y_2)
@@ -86,14 +73,10 @@ def population_stats(population):
         print(population[scores[0][0]])
         exit()
 
-
-
 if __name__ == '__main__':
     pop = init(10000)
     for i in range(10000):
-        population_stats(pop)
+        population_stats(pop) #This will terminate when an ideal solution is found.
         parents = select_parents(pop, 1000)
         offspring = generate_offspring(parents, 9000)
         pop = evolve_population(parents, offspring)
-
-
