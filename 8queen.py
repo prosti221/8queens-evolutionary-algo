@@ -81,7 +81,7 @@ if __name__ == '__main__':
     pop_size = 2000
     pop = init(pop_size)
     for i in range(10000):
-        population_stats(pop) #This will terminate when an ideal solution is found.
+        population_stats(pop) #This will terminate when a solution is found.
         parents = select_parents(pop, int(pop_size*0.1))
         offspring = generate_offspring(parents, int(pop_size*0.9))
         pop = evolve_population(parents, offspring)
