@@ -1,16 +1,6 @@
 import numpy as np
 from random import * 
 
-#Place 8 queens so that none of them can threaten each other.
-#no two queens can have the same x or y value, therby no linear threat.
-#check there is no diagonal threat, such that abs(x_1 - x_2) = abs(y_1 - y_2)
-
-#Define fitness as +100 for no linear threat for each queen
-#                  +100 for no diagonal threat for each queen
-#such that the optimal fitness is 5600 for when no queens threaten each other.
-
-#returns a list of board states with 8 queens in them
-
 DIM = 8 #8x8 
 MAX_SCORE = sum([200*n for n in range(1, DIM)])
 
